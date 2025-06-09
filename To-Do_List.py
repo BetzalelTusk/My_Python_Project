@@ -4,7 +4,7 @@ from tkinter import messagebox
 root = tk.Tk()
 root.title("To-Do List")
 root.geometry("400x400")
-
+root.resizable(True, True)
 tasks = []
 
 
@@ -31,7 +31,8 @@ def delete_task():
 def update_listbox():
     listbox.delete(0, tk.END)
     for task in tasks:
-        listbox.insert(tk.END, tasks)
+        listbox.insert(tk.END, task)
+    print(tasks)
 
 
 entry = tk.Entry(root, width=40)
