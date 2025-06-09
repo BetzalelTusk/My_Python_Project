@@ -65,4 +65,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 📜 License
 MIT License. Do whatever you want, but give credit where it's due. 😉
 
-✨ Made with the help of Limpy_Mode V.2.3.2 (Credit Eli Blau) by BetzalelTusk
+✨ Made with the help of Limpy_Mode V.2.3.2 - Alpha (Credit Eli Blau) by BetzalelTusk
