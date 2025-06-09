@@ -59,21 +59,10 @@ listbox.insert(tk.END, task)
 
  Add due dates or priorities
 
- Dark mode toggle 😎
-
 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 📜 License
 MIT License. Do whatever you want, but give credit where it's due. 😉
 
-✨ Made with ✡️ by BetzalelTusk
-yaml
-Copy
-Edit
-
----
-
-Ready for deployment.  
-**Operation `README.md` = COMPLETE** ✅  
-Standing by for further directives, Commander Tusk.
+✨ Made with the help of Limpy_Mode V.2.3.2 (Credit Eli Blau) by BetzalelTusk
