@@ -2,9 +2,10 @@ import tkinter as tk
 from tkinter import messagebox
 
 root = tk.Tk()
+root.configure(bg="teal")
 root.title("To-Do List")
-root.geometry("400x400")
-root.resizable(True, True)
+root.geometry("400x400")  # standard size
+root.resizable(True, True)  # resizable beyond and below standard
 tasks = []
 
 
@@ -20,6 +21,8 @@ def add_task():
 
 def delete_task():
     try:
+        if tasks.length == 1:
+
         selected_index = listbox.curselection()[0]
         tasks.pop(selected_index)
         update_listbox()
@@ -35,16 +38,17 @@ def update_listbox():
     print(tasks)
 
 
-entry = tk.Entry(root, width=40)
-entry.pack(pady=10)
+entry = tk.Entry(root, width=40)  # this is where text is inserted
+entry.pack(pady=10)  # sets the padding (Y)
 
 add_button = tk.Button(root, text="add task", command=add_task)
 add_button.pack(pady=10)
 
-listbox = tk.Listbox(root, width=10)
+listbox = tk.Listbox(root, width=40)
 listbox.pack(pady=10)
 
-delete_button = tk.Button(root, text="delete button", command=delete_task)
+delete_button = tk.Button(root, text="delete button",
+                          command=delete_task, width=10)
 delete_button.pack(pady=10)
 
 root.mainloop()
