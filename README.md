@@ -22,7 +22,7 @@ ___
 
 ## How to use our program (currently in development)
 
-1. Clone the repo
+Clone the repo
 ``` bash
 	git clone https://github.com/BetzalelTusk/My_Python_Project/blob/main/DPG_Demo_GitHub_Import_REFERENCE_USE_ONLY.py 
 	cd DPG_Demo_GitHub_import_REFERENCE_USE_ONLY.py
