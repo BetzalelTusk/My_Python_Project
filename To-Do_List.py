@@ -1,3 +1,5 @@
+# This file was written in its ENTIRETY by OpenAI's ChatGPT
+
 import tkinter as tk
 from tkinter import messagebox
 
@@ -6,7 +8,7 @@ root.configure(bg="teal")
 root.title("To-Do List")
 root.geometry("400x400")  # standard size
 root.resizable(True, True)  # resizable beyond and below standard
-tasks = []
+tasks = [""]
 
 
 def add_task():
@@ -23,8 +25,8 @@ def delete_task():
     try:
         if tasks.length == 1:
 
-        selected_index = listbox.curselection()[0]
-        tasks.pop(selected_index)
+            selected_index = listbox.curselection()[0]
+            tasks.pop(selected_index)
         update_listbox()
     except IndexError:
         messagebox.showwarning(

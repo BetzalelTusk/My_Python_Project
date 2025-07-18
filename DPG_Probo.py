@@ -1,3 +1,5 @@
+# I am temporarily naming this project "Probo" for Productivity Booster, AKA Project Probo
+
 import dearpygui.dearpygui as dpg
 
 DEFAULT_WIDTH = 700
@@ -11,9 +13,9 @@ DEFAULT_VIEWPORT_TITLE = "My Grade Book"
 
 class gameApp:
     def __init__(self, name: str, grade: int, Student_ID: str):
-        self.name = "Student"
-        self.grade = "Student's Grade"
-        self.Student_ID = "Student's ID"
+        self.name = name
+        self.grade = grade
+        self.Student_ID = Student_ID
         dpg.create_context()
         dpg.create_viewport(
             title=DEFAULT_VIEWPORT_TITLE,
@@ -36,12 +38,17 @@ class gameApp:
             dpg.add_text("Student's Grade Page")
             dpg.add_button(label="Calculate Grade")
             # Grade Input
-            dpg.add_input_text(label="Grade", default_value="Input Grade Here")
+            dpg.add_input_text(
+                label="Grade", default_value="Input Grade Here",
+                tag="Student Grade")
         dpg.setup_dearpygui()
         dpg.show_viewport()
         dpg.start_dearpygui()
         dpg.destroy_context()
 
+    # def decide_grade():
 
-gameApp("Bob", 93, "85392048_MD")
-print(gameApp)
+
+obj = gameApp("Josh", 80, "483920_MD")
+print(obj)
+print('hi')
