@@ -308,6 +308,7 @@ def show_demo():
 
                     for i in range(7):
 
+                        # These are the colored buttons in Widgets -> Basics -> Selectable
                         with dpg.theme(tag="__demo_theme"+str(i)):
                             with dpg.theme_component(dpg.mvButton):
                                 dpg.add_theme_color(dpg.mvThemeCol_Button, _hsv_to_rgb(i/7.0, 0.6, 0.6))
