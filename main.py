@@ -1,7 +1,7 @@
 import turtle
 import time
 
-delay = .2
+delay = .05
 Width = 650
 Height = 650
 
@@ -31,6 +31,7 @@ def move():
         head.sety(y - 20)
 
     if head.direction == "right":
+
         x = head.xcor()
         head.setx(x + 20)
 
@@ -40,19 +41,31 @@ def move():
 
 
 def goingUp():
-    head.direction = "up"
+    if head.direction == "down":
+        return
+    else:
+        head.direction = "up"
 
 
 def goingDown():
-    head.direction = "down"
+    if head.direction == "up":
+        return
+    else:
+        head.direction = "down"
 
 
 def goingRight():
-    head.direction = "right"
+    if head.direction == "left":
+        return
+    else:
+        head.direction = "right"
 
 
 def goingLeft():
-    head.direction = "left"
+    if head.direction == "right":
+        return
+    else:
+        head.direction = "left"
 
 
 # Key bindings
