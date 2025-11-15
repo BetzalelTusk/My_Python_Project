@@ -293,7 +293,7 @@ def show_demo():
                 with dpg.group(horizontal=True):
                     dpg.add_button(label="Button", callback=_log)
                     dpg.add_button(label="Button", callback=_log, small=True)
-                    dpg.add_button(label="Button", callback=_log, arrow=True) # default direction is mvDir_Up
+                    dpg.add_button(label="Button", callback=_log, arrow=True, direction=dpg.mvDir_Up) # default direction is mvDir_Up
                     dpg.add_button(label="Button", callback=_log, arrow=True, direction=dpg.mvDir_Left)
                     dpg.add_button(label="Button", callback=_log, arrow=True, direction=dpg.mvDir_Right)
                     dpg.add_button(label="Button", callback=_log, arrow=True, direction=dpg.mvDir_Down)
