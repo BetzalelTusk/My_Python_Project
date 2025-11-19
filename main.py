@@ -2,6 +2,9 @@ import turtle
 import time
 import random
 
+# Game status
+game = True
+
 delay = .01
 Width = 600
 Height = 600
@@ -12,6 +15,7 @@ maxX = Width / 2
 minX = (Width / 2) * -1
 maxY = Height / 2
 minY = (Height / 2 * -1)
+pastBoarder = False
 
 # set up the screen
 wn = turtle.Screen()
@@ -68,11 +72,17 @@ def move():
         or head.xcor() > maxX
         or head.ycor() < minY
             or head.ycor() > maxY):
-        print("(", head.xcor(), ",",  head.ycor(), ")")
+        global pastBoarder
+        pastBoarder = True
 
-        # Set "X" to be true if the head.xcor() is within the parameters
-        # Set "Y" to be true if the head.xcor() is within the parameters
-        # If both "X" and "Y" are true, -> move().
+        print("(", head.xcor(), ",",  head.ycor(), ")")
+        print(pastBoarder)
+    else:
+        print(pastBoarder)
+
+       # Set "X" to be true if the head.xcor() is within the parameters
+       # Set "Y" to be true if the head.xcor() is within the parameters
+       # If both "X" and "Y" are true, -> move().
 
 
 def goingUp():
@@ -111,7 +121,7 @@ wn.onkeypress(goingRight, "d")
 wn.onkeypress(goingLeft, "a")
 
 # Main game loop
-while True:
+while game == True:
 
     wn.update()
 
@@ -124,6 +134,10 @@ while True:
         food.goto(x, y)
         score = score + 1
         print(score)
+
+# Boarder crossing consequence
+    if pastBoarder == True:
+        game = False
 
     # while True:
 
