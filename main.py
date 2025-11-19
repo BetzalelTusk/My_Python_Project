@@ -80,9 +80,9 @@ def move():
     else:
         print(pastBoarder)
 
-       # Set "X" to be true if the head.xcor() is within the parameters
-       # Set "Y" to be true if the head.xcor() is within the parameters
-       # If both "X" and "Y" are true, -> move().
+# Set "X" to be true if the head.xcor() is within the parameters
+# Set "Y" to be true if the head.xcor() is within the parameters
+# If both "X" and "Y" are true, -> move().
 
 
 def goingUp():
@@ -121,12 +121,15 @@ wn.onkeypress(goingRight, "d")
 wn.onkeypress(goingLeft, "a")
 
 # Main game loop
-while game == True:
+while game:
 
+    # Updates UI
     wn.update()
 
+    # Sets time variable into action
     time.sleep(delay)
 
+    # Food contact result
     if head.distance(food) < 20:
         # Move food to new spot
         x = random.randint(-290, 290)
@@ -135,10 +138,16 @@ while game == True:
         score = score + 1
         print(score)
 
-# Boarder crossing consequence
+    # Boarder crossing consequence
     if pastBoarder == True:
         game = False
 
-    # while True:
-
+    # While above is true
     move()
+
+
+# NOTES SECTION
+# - Make a variable that stores the location of head, and every time the head moves, the previouys coordinates will
+# apply to the next unit of snake body, resulting in the body following the head.
+# - If the head's coordinates == to any of the values of x, which the snakes body exists on, game = false and the game
+# ends there. The score will be listed on the top of the screen with the score variable.
