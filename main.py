@@ -7,6 +7,12 @@ Width = 600
 Height = 600
 score = 0
 
+# Boarders
+maxX = Width / 2
+minX = (Width / 2) * -1
+maxY = Height / 2
+minY = (Height / 2 * -1)
+
 # set up the screen
 wn = turtle.Screen()
 wn.title("Sname Game Tutorial")
@@ -14,14 +20,17 @@ wn.bgcolor("green")
 wn.setup(width=Width, height=Height)
 turtle.Screen()
 
-# Snake Food
+# Snake Head
 head = turtle.Turtle()
 head.speed(0)
 head.shape("square")
 head.color("black")
 head.penup()
 head.goto(0, 0)
-head.direction = "up"
+head.direction = "right"
+locationX = head.xcor
+print(locationX)
+
 
 # Snake Food
 
@@ -54,6 +63,17 @@ def move():
         x = head.xcor()
         head.setx(x - 5)
 
+    # while True:
+    if (head.xcor() < minX
+        or head.xcor() > maxX
+        or head.ycor() < minY
+            or head.ycor() > maxY):
+        print("(", head.xcor(), ",",  head.ycor(), ")")
+
+        # Set "X" to be true if the head.xcor() is within the parameters
+        # Set "Y" to be true if the head.xcor() is within the parameters
+        # If both "X" and "Y" are true, -> move().
+
 
 def goingUp():
     if head.direction == "down":
@@ -82,13 +102,6 @@ def goingLeft():
     else:
         head.direction = "left"
 
-# Set Boarders
-
-
-def boardCheck():
-    if head.xcor() <= Width * -1 or head.ycor() <= Height * -1:
-        head.direction == "right"
-
 
 # Key bindings
 wn.listen()
@@ -111,5 +124,7 @@ while True:
         food.goto(x, y)
         score = score + 1
         print(score)
+
+    # while True:
 
     move()
